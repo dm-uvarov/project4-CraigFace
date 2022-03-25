@@ -2,27 +2,27 @@ class PostsController < ApplicationController
 
 
     def index 
-        render json: Post.all
+        render json: Post.all, status: :ok
     end
 
     def show
         post = Post.find(params[:id])
-        render json: post
+        render json: post, status: :ok
     end
 
     def create
-        post = Post.create!(post_params)
-        render json: post
+        post = @current_user.posts.create!(post_params)
+        render json: post, status: :created
     end
 
     def destroy
-        post = Post.find(params[:id])
-        post.destory
+        post =  @current_user.posts.find(params[:id])
+        post.destroy
         head :no_content
     end
 
     def update
-        post = Post.find(params[:id])
+        post =  @current_user.posts.find(params[:id])
         post.update!(post_params)
         render json: post
     end
