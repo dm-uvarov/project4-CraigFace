@@ -5,6 +5,21 @@ import './App.css';
 function App() {
   const [posts, setPosts] = useState([])
 
+     = (p) => {
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(p)
+    })
+      .then(r=>r.json())
+      .then(newObj => {
+        setPosts([...posts, newObj])
+      })
+  }
+
+
   useEffect(() => {
     fetch("/posts")
       .then(r=>r.json())
