@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :posts
+  resources :posts, only: [:create, :update, :destory, :index, :show]
   resources :users
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
