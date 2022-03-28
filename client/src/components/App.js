@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react'
 
 import './App.css';
 import StartPage from "./StartPage"
+import {Route, Switch} from 'react-router-dom'
+import Home from "./Home"
+import Header from "./Header"
+import NewPostForm from './NewPostForm';
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -35,14 +39,20 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Header />
-      <Switch>
-        <Route>
-          <NewPost createPost={createPost} />
-        </Route>
-      </Switch> */}
-      <StartPage/>
-      
+      <Header />
+      <div>
+        <Switch>
+          <Route path="/">
+            <StartPage/>
+          </Route>
+          <Route>
+           <NewPostForm/>
+          </Route>
+          <Route>
+            <Home/>
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }
