@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginForm from './LoginForm'
+import SignupForm from './SignupForm'
 // import {useNavigate} from 'react-router-dom'
 
 function StartPage (){
@@ -11,7 +12,7 @@ function StartPage (){
 
 
     return(
-        <LoginForm/>
+        <SignupForm/>
     )
 }
 
