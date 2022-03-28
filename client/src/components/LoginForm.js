@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 
-function LoginForm(){
+function LoginForm({setUser}){
 
 
     const [username,setUsername] = useState("")
@@ -23,8 +23,14 @@ function LoginForm(){
             body: JSON.stringify(userLogin)
         })
         // Problem with error handling
-        .then(r=>r.json())
-        .then(d => console.log(d))
+        .then(r=>{
+            if(r.ok){
+                r.json().then(setUser)
+            }else{
+                r.json().then(alert("Invalid Username or Password"))
+            }
+        })
+        // .then(d => console.log(d))
     }
 
     return (

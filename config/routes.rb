@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post "/login",    to:"sessions#login"
   #logout
   delete "/logout",to:"sessions#logout"
+  #check is user is logged in
+  get '/logged_in', to:"sessions#is_logged_in"
 
 
 

@@ -6,6 +6,16 @@ class ApplicationController < ActionController::API
   before_action :authorize
 
 
+  def loggin!
+    session[:user_id] = @user.id
+  end
+
+  def logged_in?
+    !!session[:user_id]
+  end
+
+
+
   private
 
   def render_unprocessable_entity(invalid)

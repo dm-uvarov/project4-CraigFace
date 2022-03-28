@@ -4,11 +4,18 @@ import NewPostForm from './NewPostForm'
 
 function Header() {
   return (
-    <nav>
-        <NavLink exact to='/'>Home</NavLink>
-        <NavLink to='/startpage'>Login</NavLink>
-        <NavLink to='/new-post-form'>Create Post</NavLink>
-    </nav>
+    <div>
+        
+        <NavLink exact to='/'>
+            Signup
+        </NavLink>
+
+        <NavLink to='/NewPostForm' >
+            New Post
+        </NavLink>
+
+
+    </div>
   )
 }
 

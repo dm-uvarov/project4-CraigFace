@@ -10,7 +10,10 @@ class SessionsController < ApplicationController
         else 
             render json: {errors: ["Invalid username or password"]},status: :unauthorized
         end
+    end
 
+    def is_logged_in
+        render json: {loggedin: logged_in?}, status: :ok
     end
 
     def logout
