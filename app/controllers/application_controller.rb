@@ -5,7 +5,12 @@ class ApplicationController < ActionController::API
     #need add before action
   before_action :authorize
 
+  # helper_method :loggin!
 
+  def loggin!
+    session[:user_id] = @user.id
+  end
+  
   def loggin!
     session[:user_id] = @user.id
   end

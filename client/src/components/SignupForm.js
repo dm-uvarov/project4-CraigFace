@@ -8,7 +8,8 @@ function SignupForm(){
     const [passwordConfirm,setPasswordConfirm] = useState("")
 
     const handleSubmit = (e) => {
-        if(password != passwordConfirm){
+        // e.preventDefault()
+        if(password !== passwordConfirm){
             return alert("passwords do not match")
         }
         const newUser = {

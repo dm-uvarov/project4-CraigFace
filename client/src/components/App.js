@@ -4,12 +4,10 @@ import './App.css';
 import StartPage from "./StartPage"
 import {Route, Switch} from 'react-router-dom'
 import Home from "./Home"
-import Header from "./Header"
 import NewPostForm from './NewPostForm';
 
 function App() {
   const [posts, setPosts] = useState([])
-  const [loggedIn, setLoggedIn] = useState(false)
   const [user,setUser] = useState(null)
   
 
@@ -72,7 +70,7 @@ function App() {
       <div>
         <Switch>
           <Route path="/new-post-form">
-            <NewPostForm/>
+            <NewPostForm createPost={createPost}/>
           </Route>
           <Route path="/">
             <Home setUser={setUser} posts={posts}/>

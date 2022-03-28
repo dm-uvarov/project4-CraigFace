@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from './Header'
-import NewPostForm from './NewPostForm'
-import LogoutButton from './LogoutButton'
+import PostContainer from './PostContainer'
 
 
 function Home({setUser, posts}) {
@@ -12,8 +11,8 @@ function Home({setUser, posts}) {
   return (
   <div>
         <div>
-          <Header />Home
-          <LogoutButton setUser={setUser}/>
+          <Header setUser={setUser}/>Home
+          <PostContainer posts={posts}/>
         </div>
         
     </div>

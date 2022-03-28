@@ -1,9 +1,9 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import LogoutButton from './LogoutButton'
-import NewPostForm from './NewPostForm'
 
-function Header() {
+
+function Header({setUser}) {
   return (
     
     <nav>
@@ -13,6 +13,9 @@ function Header() {
 
         <NavLink to='/new-post-form' >
             <button>Create Post</button>
+        </NavLink>
+        <NavLink to='/'>
+          <LogoutButton setUser={setUser}/>
         </NavLink>
     </nav>
   )
