@@ -14,7 +14,7 @@ function StartPage (){
 
 
     return(
-        <NewPostForm/>
+        <SignupForm/>
     )
 }
 
