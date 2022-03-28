@@ -1,5 +1,5 @@
 import React from 'react'
-import React, {useState} from 'react'
+import {useState} from 'react'
 
 // t.string "category"
 //     t.string "image_url"
@@ -22,4 +22,4 @@ function NewPost({createPost}) {
   )
 }
 
-export default Form
+export default NewPost

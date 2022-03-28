@@ -1,23 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import NewPost from './NewPost';
 import './App.css';
+import StartPage from "./StartPage"
 
 function App() {
   const [posts, setPosts] = useState([])
 
-     = (p) => {
-    fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(p)
-    })
-      .then(r=>r.json())
-      .then(newObj => {
-        setPosts([...posts, newObj])
-      })
-  }
 
 
   useEffect(() => {
@@ -47,13 +35,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header />
       <Switch>
         <Route>
           <NewPost createPost={createPost} />
         </Route>
-      </Switch>
-      
+      </Switch> */}
+      <StartPage/>
       
     </div>
   );
