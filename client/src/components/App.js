@@ -36,7 +36,7 @@ function App() {
   // })
 
 
-    console.log(loggedIn)
+    
 
 
   const createPost = (p) => {
@@ -54,7 +54,15 @@ function App() {
   }
 
   
- 
+ if (!(user)) {
+   return(
+    <Switch>
+      <Route path="/">
+       <StartPage setUser={setUser}/>
+      </Route>
+    </Switch>
+   )
+ }
 
 
 
@@ -64,13 +72,7 @@ function App() {
       <div>
         <Switch>
           <Route path="/">
-            <StartPage setUser={setUser}/>
-          </Route>
-          <Route>
-           <NewPostForm/>
-          </Route>
-          <Route>
-            <Home/>
+            <Home setUser={setUser} posts={posts}/>
           </Route>
         </Switch>
       </div>
