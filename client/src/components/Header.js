@@ -1,24 +1,14 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import NewPostForm from './NewPostForm'
 
 function Header() {
   return (
-    <div>
-        
-        <NavLink exact to='/'>
-            Signup
-        </NavLink>
-
-        <NavLink to='/NewPostForm' >
-            New Post
-        </NavLink>
-
-        <NavLink>
-
-        </NavLink>
-
-
-    </div>
+    <nav>
+        <NavLink exact to='/'>Home</NavLink>
+        <NavLink to='/startpage'>Login</NavLink>
+        <NavLink to='/new-post-form'>Create Post</NavLink>
+    </nav>
   )
 }
 

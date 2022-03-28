@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+import Header from './Header'
 
 // t.string "category"
 //     t.string "image_url"
@@ -17,6 +18,7 @@ function NewPostForm({createPost}) {
 
   return (
     <div> 
+        <Header/>
       <div> 
         <h2>New post here?:</h2>    
       </div>

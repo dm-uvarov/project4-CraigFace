@@ -1,8 +1,17 @@
 import React from 'react'
+import Header from './Header'
+import NewPostForm from './NewPostForm'
+
 
 function Home() {
+
+
+
+    
   return (
-    <div>Home</div>
+    <div>
+        <Header />
+    Home</div>
   )
 }
 

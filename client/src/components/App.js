@@ -9,6 +9,8 @@ import NewPostForm from './NewPostForm';
 
 function App() {
   const [posts, setPosts] = useState([])
+  const [loggedIn, setLoggedIn] = useState(false)
+  
 
 
 
@@ -17,6 +19,14 @@ function App() {
       .then(r=>r.json())
       .then(data => setPosts(data))
   }, [])
+
+  useEffect(() => {
+    fetch('/me')
+    .then(r=>r.json())
+    .then(setLoggedIn(true))
+  })
+
+    console.log(loggedIn)
 
 
   const createPost = (p) => {
@@ -33,13 +43,14 @@ function App() {
       })
   }
 
+  
  
 
 
 
   return (
     <div className="App">
-      <Header />
+      
       <div>
         <Switch>
           <Route path="/">
