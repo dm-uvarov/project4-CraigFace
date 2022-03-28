@@ -71,6 +71,9 @@ function App() {
       
       <div>
         <Switch>
+          <Route path="/new-post-form">
+            <NewPostForm/>
+          </Route>
           <Route path="/">
             <Home setUser={setUser} posts={posts}/>
           </Route>

@@ -15,9 +15,7 @@ function Home({setUser, posts}) {
           <Header />Home
           <LogoutButton setUser={setUser}/>
         </div>
-        <div>
-           {posts}
-        </div>
+        
     </div>
   )
 }

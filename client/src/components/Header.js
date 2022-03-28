@@ -1,21 +1,20 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import LogoutButton from './LogoutButton'
 import NewPostForm from './NewPostForm'
 
 function Header() {
   return (
-    <div>
-        
+    
+    <nav>
         <NavLink exact to='/'>
-            Signup
+            <button>Home</button>
         </NavLink>
 
-        <NavLink to='/NewPostForm' >
-            New Post
+        <NavLink to='/new-post-form' >
+            <button>Create Post</button>
         </NavLink>
-
-
-    </div>
+    </nav>
   )
 }
 

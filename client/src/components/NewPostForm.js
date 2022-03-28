@@ -34,7 +34,8 @@ function NewPostForm({createPost}) {
 
   return (
     <div> 
-        <Header/>
+        <Header />
+        
       <div> 
         <h2>New post here?:</h2>    
       </div>
