@@ -1,5 +1,5 @@
 import React from 'react'
-import {TextInput} from 'react-native-paper'
+
 
 function LoginForm(){
 
@@ -21,7 +21,7 @@ function LoginForm(){
                 <div> 
                     <label> 
                         <div>Password: </div>
-                        <TextInput right={<TextInput.Icon name={paswordVisible ? "eye":"eye-off"}  />}/>
+                        <input type="password"  />
                     </label>
                 </div>
                 <div>
