@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import NewPost from './NewPost';
+
 import './App.css';
 import StartPage from "./StartPage"
 
