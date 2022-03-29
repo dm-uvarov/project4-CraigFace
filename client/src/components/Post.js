@@ -1,15 +1,23 @@
 import React from 'react'
 
 function Post({post}) {
+
+    const imgStyle = {
+        height: '250px',
+        width: "100%"
+    }
+
   return (
-    <div className="card">
+    <div  onClick={() => console.log("hi")} className="card  mb-2">
         {/* <span className="border border-primary"> */}
-            <img 
-            className='card-img-top'
+            <img
+            style={imgStyle}
+            className='card-img-top border border-dark'
             src={post.image_url}
             alt='img'
             />
             <div className="card-body">
+                    <p className='card-title'>{post.price}</p>
                 <p className="card-text">{post.description}</p>
             </div>
         {/* </span> */}
