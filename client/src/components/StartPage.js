@@ -8,8 +8,9 @@ function StartPage ({setUser}){
     return(
         <div>
             <LoginForm setUser={setUser}/>
+            <h2 id='member'>Not a member?</h2>
             <SignupForm/>
-            <LogoutButton setUser={setUser}/>
+            
         </div>
     )
 }

@@ -28,10 +28,10 @@ function SignupForm(){
 
 
 return(
-    <div> 
-        <div> 
-            <h2>Signup:</h2>    
-        </div>
+    <div className='signup-form'> 
+        
+            <h2>Signup</h2>    
+        
     
         <form onSubmit={handleSubmit}>
                         

@@ -35,7 +35,7 @@ function LoginForm({setUser}){
     return (
 
         <div className="login-form">
-            <h1>Sign in</h1> 
+            <h1>Login</h1> 
             <form onSubmit={onSubmit}>
                         
                 <div class="form-outline mb-4">
@@ -49,10 +49,10 @@ function LoginForm({setUser}){
                     <label class="form-label" for="form2Example2">Password</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
             </form>
 
-            <h1>Not a member?</h1>
+            
         
 
          </div>
