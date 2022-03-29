@@ -14,7 +14,6 @@ function Header({setUser}) {
         <NavLink to='/new-post-form' >
             <button>Create Post</button>
         </NavLink>
-        
         <NavLink to='/'>
           <LogoutButton setUser={setUser}/>
         </NavLink>

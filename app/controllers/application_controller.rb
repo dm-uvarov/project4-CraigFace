@@ -10,10 +10,6 @@ class ApplicationController < ActionController::API
   def loggin!
     session[:user_id] = @user.id
   end
-  
-  def loggin!
-    session[:user_id] = @user.id
-  end
 
   def logged_in?
     !!session[:user_id]

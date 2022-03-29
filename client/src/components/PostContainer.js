@@ -33,7 +33,7 @@ function PostContainer({posts}) {
         )})}
 
         <Switch>
-            <Route path={`/posts/:id`}>
+            <Route path={`/posts/:1`}>
                 <Post post={posts[1]}/>
             </Route>
         </Switch>
