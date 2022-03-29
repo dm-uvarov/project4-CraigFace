@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 
 
+
 function LoginForm({setUser}){
 
 
@@ -32,28 +33,28 @@ function LoginForm({setUser}){
     }
 
     return (
-        <div> 
-            <div> 
-                <h1>Login:</h1>    
-            </div>
+
+        <div className="login-form">
+            <h1>Sign in</h1> 
             <form onSubmit={onSubmit}>
-                <div> 
-                    <label> 
-                        <div>Username: </div>
-                        <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username"/>
-                    </label>
+                        
+                <div class="form-outline mb-4">
+                    <input onChange={(e) => setUsername(e.target.value)} type="text" id="form2Example1" class="form-control" placeholder="Username" />
+                    <label class="form-label" for="form2Example1">Username</label>
                 </div>
-                <div> 
-                    <label> 
-                        <div>Password: </div>
-                        <input onChange={(e) => setPassword(e.target.value)} type="password"  />
-                    </label>
+
+                        
+                <div class="form-outline mb-4">
+                    <input onChange={(e) => setPassword(e.target.value)} type="password" id="form2Example2" class="form-control" placeholder="Password" />
+                    <label class="form-label" for="form2Example2">Password</label>
                 </div>
-                <div>
-                    <button type="submit">Login</button>
-                </div>
+
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
             </form>
-            <div> or signup?</div>
+
+            <h1>Not a member?</h1>
+        
+
          </div>
 
 
