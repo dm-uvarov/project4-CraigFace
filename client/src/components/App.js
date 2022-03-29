@@ -2,7 +2,11 @@ import React, {useState, useEffect} from 'react'
 
 import './App.css';
 import StartPage from "./StartPage"
-import {Route, Switch} from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import Home from "./Home"
 import NewPostForm from './NewPostForm';
 
@@ -65,19 +69,21 @@ function App() {
 
 
   return (
-    <div className="App">
-      
-      <div>
-        <Switch>
-          <Route path="/new-post-form">
-            <NewPostForm createPost={createPost}/>
-          </Route>
-          <Route path="/">
-            <Home setUser={setUser} posts={posts}/>
-          </Route>
-        </Switch>
+    <Router>
+      <div className="App">
+        
+        <div>
+          <Switch>
+            <Route path="/new-post-form">
+              <NewPostForm createPost={createPost}/>
+            </Route>
+            <Route path="/">
+              <Home setUser={setUser} posts={posts}/>
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

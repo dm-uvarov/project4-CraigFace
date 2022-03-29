@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import PostContainer from './PostContainer'
-
+import Post from './Post'
 
 function Home({setUser, posts}) {
   

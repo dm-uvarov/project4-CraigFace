@@ -1,6 +1,12 @@
 import React from 'react'
 import Post from './Post'
+import { 
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
+const url = 'http://localhost:4000/'
 function PostContainer({posts}) {
 
 
@@ -18,11 +24,20 @@ function PostContainer({posts}) {
                     // console.log(post)
                     return(
                     <div key={post.id} className='col-md-3'>
-                        <Post  post={post} key={post.id}/>
+                        <Link to={`/posts/${post.id}`}>
+                            <Post  post={post} key={post.id}/>
+                        </Link>
                     </div>
                 )})}
             </div>
         )})}
+
+        <Switch>
+            <Route path={`/posts/:id`}>
+                <Post post={posts[1]}/>
+            </Route>
+        </Switch>
+
     </div>
   )
 }

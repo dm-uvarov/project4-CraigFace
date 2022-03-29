@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Post({post}) {
+    console.log(post)
 
     const imgStyle = {
         height: '250px',
