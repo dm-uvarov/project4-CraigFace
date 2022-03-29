@@ -38,18 +38,18 @@ function LoginForm({setUser}){
             <h1>Login</h1> 
             <form onSubmit={onSubmit}>
                         
-                <div class="form-outline mb-4">
-                    <input onChange={(e) => setUsername(e.target.value)} type="text" id="form2Example1" class="form-control" placeholder="Username" />
-                    <label class="form-label" for="form2Example1">Username</label>
+                <div className="form-outline mb-4">
+                    <input onChange={(e) => setUsername(e.target.value)} type="text" id="form2Example1" className="form-control" placeholder="Username" />
+                    <label className="form-label" for="form2Example1">Username</label>
                 </div>
 
                         
                 <div class="form-outline mb-4">
-                    <input onChange={(e) => setPassword(e.target.value)} type="password" id="form2Example2" class="form-control" placeholder="Password" />
-                    <label class="form-label" for="form2Example2">Password</label>
+                    <input onChange={(e) => setPassword(e.target.value)} type="password" id="form2Example2" className="form-control" placeholder="Password" />
+                    <label className="form-label" for="form2Example2">Password</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+                <button type="submit" className="btn btn-primary btn-block mb-4">Login</button>
             </form>
 
             
