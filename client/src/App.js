@@ -17,6 +17,12 @@ function App() {
   const [selectedPost, setSelectedPost] = useState(posts[1])
 
   useEffect(() => {
+    fetch("/posts")
+      .then(r=>r.json())
+      .then(data => setPosts(data))
+  }, [])
+
+  useEffect(() => {
     fetch("/me").then(r => {
       if (r.ok){
         r.json().then(setUser)
@@ -26,11 +32,7 @@ function App() {
   }, [])
 
 
-  useEffect(() => {
-    fetch("/posts")
-      .then(r=>r.json())
-      .then(data => setPosts(data))
-  }, [])
+
 
   // useEffect(() => {
   //   fetch('/logged_in')

@@ -4,7 +4,7 @@ import PostContainer from './PostContainer'
 import Sidebar from './Sidebar'
 
 function Home({setUser, posts, user, setSelectedPost}) {
-  const [filtered, setFiltered] = useState([true])
+  const [filtered, setFiltered] = useState(false)
   // const [filteredPosts, setFilteredPosts] = useState([posts])
   console.log(posts)
   // console.log(filteredPosts)
@@ -36,10 +36,10 @@ function Home({setUser, posts, user, setSelectedPost}) {
           <div className="checkbox-area"> 
             <label > 
               Show only my posts <span/>
-              <input type="checkbox" onClick={toggleMyPosts} checked={filtered}/>
+              <input type="checkbox" onChange={toggleMyPosts}  />
             </label>
           </div>
-          <PostContainer posts={filteredPosts} setSelectedPost={setSelectedPost} />
+          <PostContainer posts={filteredPosts} setSelectedPost={setSelectedPost} checked = {filtered}/>
           <Sidebar user={user}/>
         </div>
         
