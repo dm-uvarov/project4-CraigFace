@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Header from './Header'
 import PostContainer from './PostContainer'
-import Post from './Post'
+import Sidebar from './Sidebar'
 
 function Home({setUser, posts, user, setSelectedPost}) {
   const [filtered, setFiltered] = useState([false])
@@ -36,6 +36,7 @@ function Home({setUser, posts, user, setSelectedPost}) {
             </label>
           </div>
           <PostContainer posts={filteredPosts} setSelectedPost={setSelectedPost}/>
+          <Sidebar user={user}/>
         </div>
         
     </div>
