@@ -39,14 +39,14 @@ function LoginForm({setUser}){
             <form onSubmit={onSubmit}>
                         
                 <div className="form-outline mb-4">
-                    <input onChange={(e) => setUsername(e.target.value)} type="text" id="form2Example1" className="form-control" placeholder="Username" />
-                    <label className="form-label" for="form2Example1">Username</label>
+                    <input onChange={(e) => setUsername(e.target.value)} type="text" id="login-username-input" className="form-control" placeholder="Username" />
+                    <label className="form-label" htmlFor="login-username-input">Username</label>
                 </div>
 
                         
-                <div class="form-outline mb-4">
-                    <input onChange={(e) => setPassword(e.target.value)} type="password" id="form2Example2" className="form-control" placeholder="Password" />
-                    <label className="form-label" for="form2Example2">Password</label>
+                <div className="form-outline mb-4">
+                    <input onChange={(e) => setPassword(e.target.value)} type="password" id="login-pasword-input" className="form-control" placeholder="Password" />
+                    <label className="form-label" htmlFor="login-pasword-input">Password</label>
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block mb-4">Login</button>

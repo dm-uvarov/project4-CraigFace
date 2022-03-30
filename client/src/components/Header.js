@@ -6,13 +6,13 @@ import LogoutButton from './LogoutButton'
 function Header({setUser}) {
   return (
     
-    <nav>
+    <nav className="navbar">
         <NavLink exact to='/'>
-            <button>Home</button>
+            Home
         </NavLink>
 
         <NavLink to='/new-post-form' >
-            <button>Create Post</button>
+            Create Post
         </NavLink>
         <NavLink to='/'>
           <LogoutButton setUser={setUser}/>

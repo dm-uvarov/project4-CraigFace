@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Post({post}) {
+function Post({post, setSelectedPost}) {
     console.log(post)
 
     const imgStyle = {
@@ -9,7 +9,7 @@ function Post({post}) {
     }
 
   return (
-    <div  onClick={() => console.log("hi")} className="card  mb-2">
+    <div  onClick={()=>setSelectedPost(post)} className="card  mb-2">
         {/* <span className="border border-primary"> */}
             <img
             style={imgStyle}

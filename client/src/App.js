@@ -1,19 +1,20 @@
 import React, {useState, useEffect} from 'react'
 
 import './App.css';
-import StartPage from "./StartPage"
+import StartPage from "./components/StartPage"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import Home from "./Home"
-import NewPostForm from './NewPostForm';
+import Home from "./components/Home"
+import NewPostForm from './components/NewPostForm';
+import PostPage from "./components/PostPage";
 
 function App() {
   const [posts, setPosts] = useState([])
   const [user,setUser] = useState(null)
-  
+  const [selectedPost, setSelectedPost] = useState(posts[1])
 
   useEffect(() => {
     fetch("/me").then(r => {
@@ -69,21 +70,29 @@ function App() {
 
 
   return (
-    <Router>
-      <div className="App">
-        
-        <div>
-          <Switch>
-            <Route path="/new-post-form">
-              <NewPostForm createPost={createPost}/>
-            </Route>
-            <Route path="/">
-              <Home setUser={setUser} posts={posts}/>
-            </Route>
-          </Switch>
-        </div>
+    <div className="App">
+      
+      <div>
+        <Switch>
+
+          <Route exact path="/posts/:id">
+            <PostPage post={selectedPost}/>
+          </Route>
+          
+          <Route path="/new-post-form">
+            <NewPostForm createPost={createPost}/>
+          </Route>
+          
+          <Route path="/">
+            <Home user ={user} setUser={setUser} posts={posts} setSelectedPost= {setSelectedPost}/>
+          </Route>
+          
+
+
+        </Switch>
       </div>
-    </Router>
+      
+    </div>
   );
 }
 

@@ -35,23 +35,23 @@ return(
     
         <form onSubmit={handleSubmit}>
                         
-            <div class="form-outline mb-4">
-                <input onChange={(e) => setUsername(e.target.value)} type="text" id="form2Example1" class="form-control" placeholder="Username" />
-                <label class="form-label" for="form2Example1">Username</label>
+            <div className="form-outline mb-4">
+                <input onChange={(e) => setUsername(e.target.value)} type="text" id="signup-username-input" className="form-control" placeholder="Username" />
+                <label className="form-label" htmlFor="signup-username-input">Username</label>
             </div>
         
                                 
-            <div class="form-outline mb-4">
-                <input onChange={(e) => setPassword(e.target.value)} type="password" id="form2Example2" class="form-control" placeholder="Password" />
-                <label class="form-label" for="form2Example2">Password</label>
+            <div className="form-outline mb-4">
+                <input onChange={(e) => setPassword(e.target.value)} type="password" id="signup-password-input" className="form-control" placeholder="Password" />
+                <label className="form-label" htmlFor="signup-password-input">Password</label>
             </div>
 
-            <div class="form-outline mb-4">
-                <input onChange={e => setPasswordConfirm(e.target.value)} type="password" id="form2Example2" class="form-control" placeholder="Confirm Password" />
-                <label class="form-label" for="form2Example2">Confirm Password</label>
+            <div className="form-outline mb-4">
+                <input onChange={e => setPasswordConfirm(e.target.value)} type="password" id="signup-password-c-input" className="form-control" placeholder="Confirm Password" />
+                <label className="form-label" htmlFor="signup-password-c-input">Confirm Password</label>
             </div>
         
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+            <button type="submit" className="btn btn-primary btn-block mb-4">Sign up</button>
         </form>
     
  </div>
