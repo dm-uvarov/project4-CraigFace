@@ -5,24 +5,9 @@ import Sidebar from './Sidebar'
 
 function Home({setUser, posts, user, setSelectedPost}) {
   const [filtered, setFiltered] = useState(false)
-  // const [filteredPosts, setFilteredPosts] = useState([posts])
-  console.log(posts)
-  // console.log(filteredPosts)
- 
-//   function HandleCheckBoxFiltered() {
-//   if (filtered) {
-//     // console.log(filtered)
-//     setFilteredPosts (posts.filter(post => post.user_id === user.id ))
-//     // console.log(filteredPosts)
-//   }else {
-//     setFilteredPosts (posts)
-//     // console.log(filteredPosts)
-//   }
-//     setFiltered(!filtered)
-  
-//  }
-  const filteredPosts = filtered ? posts.filter(post => post.user_id === user.id ):
-                                   posts
+
+
+  const filteredPosts = filtered ? posts.filter(post => post.user_id === user.id ) : posts
 
   const toggleMyPosts = () => setFiltered (!filtered)
 
@@ -39,7 +24,7 @@ function Home({setUser, posts, user, setSelectedPost}) {
               <input type="checkbox" onChange={toggleMyPosts}  />
             </label>
           </div>
-          <PostContainer posts={filteredPosts} setSelectedPost={setSelectedPost} checked = {filtered}/>
+          <PostContainer posts={filteredPosts} setSelectedPost={setSelectedPost}/>
           <Sidebar user={user}/>
         </div>
         

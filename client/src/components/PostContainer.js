@@ -10,10 +10,12 @@ const url = 'http://localhost:4000/'
 function PostContainer({posts, setSelectedPost}) {
 
 
-    // // array of N elements, where N is the number of rows needed
+    // // array of N elements, where N is the number of rows neede
+    console.log(posts)
     const rows = [...Array( Math.ceil(posts.length / 4) )];
     // // chunk the products into the array of rows
     const productRows = rows.map( (row, idx) => posts.slice(idx * 4, idx * 4 + 4) ) 
+    debugger 
 
     
 

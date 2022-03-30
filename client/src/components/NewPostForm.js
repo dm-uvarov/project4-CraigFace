@@ -1,13 +1,16 @@
 import React from 'react'
 import {useState} from 'react'
 import Header from './Header'
+import {Route} from 'react-router-dom'
 
 // t.string "category"
 //     t.string "image_url"
 //     t.bigint "user_id", null: false
 //     t.integer "price"
 
-function NewPostForm({createPost}) {
+function NewPostForm({addPost}) {
+
+
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState('')
@@ -27,7 +30,9 @@ function NewPostForm({createPost}) {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(newPost)
-        }).then(r=>r.json()).then(console.log)
+        }).then(r=>r.json()).then(d => addPost(d))
+        e.target.reset()
+        return(<Route path='/'></Route>)
   }
 
 
@@ -69,7 +74,8 @@ function NewPostForm({createPost}) {
             </label>
         </div>
         <div>
-            <button type="submit">signup</button>
+            
+            <button type="submit">Add Post</button>
         </div>
     </form>
     

@@ -39,6 +39,15 @@ function App() {
   //   .then(r=>r.json())
   //   .then(console.log)
   // })
+  const handleDelete = (post) => {
+    const newPosts = posts.filter((p) => p.id !== post.id)
+    setPosts(newPosts)
+  }
+
+  const addPost = (post) => {
+    const newPosts = [...posts,post]
+    setPosts(newPosts)
+  }
 
 
     
@@ -78,15 +87,15 @@ function App() {
         <Switch>
 
           <Route exact path="/posts/:id">
-            <PostPage post={selectedPost}/>
+            <PostPage handleDelete ={handleDelete} user={user} post={selectedPost}/>
           </Route>
           
           <Route path="/new-post-form">
-            <NewPostForm createPost={createPost}/>
+            <NewPostForm addPost={addPost} createPost={createPost}/>
           </Route>
           
           <Route path="/">
-            <Home user ={user} setUser={setUser} posts={posts} setSelectedPost= {setSelectedPost}/>
+            <Home user ={user} setUser={setUser} posts={posts} setSelectedPost={setSelectedPost}/>
           </Route>
           
 

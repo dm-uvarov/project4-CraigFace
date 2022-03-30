@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
     
     def destroy
-        post =  @current_user.posts.find(params[:id])
+        post =  Post.find(params[:id])
         post.destroy
         head :no_content
     end

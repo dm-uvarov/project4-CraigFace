@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Post({post, setSelectedPost}) {
-    // console.log(post)
 
     const imgStyle = {
         height: '250px',
@@ -19,7 +18,7 @@ function Post({post, setSelectedPost}) {
             />
             <div className="card-body">
                     <p className='card-title'>{post.price}</p>
-                <p className="card-text">{post.description}</p>
+                <p className="card-text">{post.name}</p>
             </div>
         {/* </span> */}
     </div>
