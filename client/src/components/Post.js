@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Post({post, setSelectedPost}) {
-    console.log(post)
+    // console.log(post)
 
     const imgStyle = {
         height: '250px',
