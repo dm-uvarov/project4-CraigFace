@@ -27,7 +27,9 @@ function LoginForm({setUser,setIsLoggedIn}){
                 r.json().then(setUser)
                 setIsLoggedIn(true)
             }else{
-                r.json().then(alert("Invalid Username or Password"))
+                r.json().then( (d) => {
+                    console.log(userLogin)
+                    alert("Invalid Username or Password")})
             }
         })
         // .then(d => console.log(d))

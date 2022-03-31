@@ -35,8 +35,6 @@ class PostsController < ApplicationController
     end
 
     def update
-
-
         post =  Post.find(params[:id])
         # byebug
         post.update(post_params)

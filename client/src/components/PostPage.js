@@ -36,7 +36,7 @@ function PostPage ({user,posts,handleDelete,setLikes,likes}) {
             method: 'PATCH',
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify({
-                "total_revenue" : 1
+                "total_revenue" : post.price
             })
         }).then(r=>r.json()).then(console.log)
         fetch(`/posts/${post.id}`,{method: "DELETE"})

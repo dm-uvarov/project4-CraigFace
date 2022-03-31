@@ -12,9 +12,11 @@ class UsersController < ApplicationController
         render json: user , status: :ok
     end
 
-    def add_total
+    def add_total_revenue
         user = User.find_by(id: params[:id])
-        user.update(total_revenue: params[:total_revenue])
+        user.total_revenue = user.total_revenue + params[:total_revenue]
+        user.save
+        byebug
         render json: user, status: :ok
     end
 

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #check is user is logged in
   get '/logged_in', to:"sessions#is_logged_in"
   # Adds to user total revenue
-  patch '/add_total_revenue/:id', to:"users#add_total"
+  patch '/add_total_revenue/:id', to:"users#add_total_revenue"
 
 
 
