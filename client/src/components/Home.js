@@ -15,7 +15,7 @@ function Home({setUser, posts, user}) {
   return (
   <div>
         <div>
-          <label> Welcome to CraigFace, {user.username}
+          <label>
           <Header setUser={setUser}/>
           </label>
           <div className="checkbox-area"> 
