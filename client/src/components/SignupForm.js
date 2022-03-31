@@ -21,7 +21,7 @@ function SignupForm(){
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(newUser)
-        }).then(r=>r.json()).then(console.log)
+        }).then(r=>r.json()).then(alert(`Welcome to CraigFace, ${newUser.username}`))
 
 
     }

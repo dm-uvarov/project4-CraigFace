@@ -15,7 +15,7 @@ function PostContainer({posts, setSelectedPost}) {
     const rows = [...Array( Math.ceil(posts.length / 4) )];
     // // chunk the products into the array of rows
     const productRows = rows.map( (row, idx) => posts.slice(idx * 4, idx * 4 + 4) ) 
-    debugger 
+    // debugger 
 
     
 
