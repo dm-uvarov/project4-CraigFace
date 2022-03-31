@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_30_211634) do
+ActiveRecord::Schema.define(version: 2022_03_31_154940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(version: 2022_03_30_211634) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "profile_pic"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "profile_pic", default: "https://housing.wvu.edu/files/d/6300c2eb-d95b-4c0a-ac8c-576bf16ea03e/no-image.jpg"
+    t.float "total_revenue", default: 0.0
+    t.integer "total_post_likes"
   end
 
   add_foreign_key "posts", "users"

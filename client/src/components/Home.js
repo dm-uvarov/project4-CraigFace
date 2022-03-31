@@ -3,7 +3,7 @@ import Header from './Header'
 import PostContainer from './PostContainer'
 import Sidebar from './Sidebar'
 
-function Home({setUser, posts, user, setSelectedPost}) {
+function Home({setUser, posts, user}) {
   const [filtered, setFiltered] = useState(false)
 
 
@@ -24,7 +24,7 @@ function Home({setUser, posts, user, setSelectedPost}) {
               <input type="checkbox" onChange={toggleMyPosts}  />
             </label>
           </div>
-          <PostContainer posts={filteredPosts} setSelectedPost={setSelectedPost}/>
+          <PostContainer posts={filteredPosts}/>
           <Sidebar user={user}/>
         </div>
         

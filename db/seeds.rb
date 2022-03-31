@@ -30,10 +30,10 @@ knife = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlvzRE--UndVC2wHf
 sw = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP9h0vqRozleonhXqrEk_UY_OlWCUSUY5weFeN92VApwMm9RFKVLbh5XUSZGW3C4Qc-JM&usqp=CAU"
 
 
-Post.create(name: "computer", description: "Device that performs processes, calculations and operations based on instructions provided by a software or hardware program.", category: "technology", image_url: computer, user_id: matt.id, price: 1000)
-Post.create(name: "iPhone", description: "Smartphone made by Apple that combines a computer, iPod, digital camera and cellular phone into one device with a touchscreen interface.", category: "technology", image_url: iphone, user_id: matt.id, price: 500)
-Post.create(name: "headphones", description: "Headphones are a pair of small speakers used for listening to sound from a computer, music player or other such electronic device.", category: "technology", image_url: hp, user_id: matt.id, price: 100)
-Post.create(name: "tablet", description: "Wireless, portable personal computer with a touchscreen interface.", category: "technology", image_url: tablet, user_id: matt.id, price: 450)
+Post.create(name: "computer", description: "Device that performs processes, calculations and operations based on instructions provided by a software or hardware program.", category: "technology", image_url: computer, user_id: matt.id, price: 1000,likes: 0)
+Post.create(name: "iPhone", description: "Smartphone made by Apple that combines a computer, iPod, digital camera and cellular phone into one device with a touchscreen interface.", category: "technology", image_url: iphone, user_id: matt.id, price: 500,likes: 0)
+Post.create(name: "headphones", description: "Headphones are a pair of small speakers used for listening to sound from a computer, music player or other such electronic device.", category: "technology", image_url: hp, user_id: matt.id, price: 100,likes: 0)
+Post.create(name: "tablet", description: "Wireless, portable personal computer with a touchscreen interface.", category: "technology", image_url: tablet, user_id: matt.id, price: 450,likes: 0)
 Post.create(name: "golf clubs", description: "Used to hit a golf ball in a game of golf. Each club is composed of a shaft with a grip and a club head.", category: "sports" , image_url: golf, user_id: dmitry.id, price: 450,likes: 0)
 Post.create(name: "basketball hoop", description: "Goals attached to the backboard and used for scoring points in a game of basketball.", category: "sports", image_url: basketball, user_id: dmitry.id, price: 1000,likes: 0)
 Post.create(name: "hockey stick", description: "Piece of sports equipment used by the players in all the forms of hockey to move the ball or puck.", category: "sports", image_url: hockey, user_id: dmitry.id, price: 100,likes: 0)

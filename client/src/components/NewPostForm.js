@@ -8,7 +8,7 @@ import {Route} from 'react-router-dom'
 //     t.bigint "user_id", null: false
 //     t.integer "price"
 
-function NewPostForm({addPost}) {
+function NewPostForm({addPost,setUser}) {
 
 
   const [name, setName] = useState('')
@@ -32,14 +32,14 @@ function NewPostForm({addPost}) {
             body:JSON.stringify(newPost)
         }).then(r=>r.json()).then(d => addPost(d))
         e.target.reset()
-        return(<Route path='/'></Route>)
+        // return(<Route path='/'></Route>)
   }
 
 
 
   return (
     <div> 
-        <Header />
+        <Header setUser={setUser}/>
         
       <div> 
         <h2>New post here?:</h2>    

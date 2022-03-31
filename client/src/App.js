@@ -10,17 +10,21 @@ import {
 import Home from "./components/Home"
 import NewPostForm from './components/NewPostForm';
 import PostPage from "./components/PostPage";
+import UserPage from './components/UserPage';
 
 function App() {
+
+
   const [posts, setPosts] = useState([])
   const [user,setUser] = useState(null)
-  const [selectedPost, setSelectedPost] = useState(posts[1])
+  const [likes,setLikes] = useState(0)
+
 
   useEffect(() => {
     fetch("/posts")
       .then(r=>r.json())
       .then(data => setPosts(data))
-  }, [])
+  }, [likes])
 
   useEffect(() => {
     fetch("/me").then(r => {
@@ -28,17 +32,10 @@ function App() {
         r.json().then(setUser)
       }
     })
-    // .then(data => setUser(data))
   }, [])
 
 
 
-
-  // useEffect(() => {
-  //   fetch('/logged_in')
-  //   .then(r=>r.json())
-  //   .then(console.log)
-  // })
   const handleDelete = (post) => {
     const newPosts = posts.filter((p) => p.id !== post.id)
     setPosts(newPosts)
@@ -85,18 +82,24 @@ function App() {
       
       <div>
         <Switch>
+          <Route path="/user-profile">
+            <UserPage user={user} setUser={setUser}/>
+          </Route>
 
           <Route exact path="/posts/:id">
-            <PostPage handleDelete ={handleDelete} user={user} post={selectedPost}/>
+            <PostPage handleDelete ={handleDelete} user={user} posts={posts} setLikes={setLikes} likes={likes}/>
           </Route>
           
           <Route path="/new-post-form">
-            <NewPostForm addPost={addPost} createPost={createPost}/>
+            <NewPostForm addPost={addPost} createPost={createPost} setUser={setUser}/>
           </Route>
           
           <Route path="/">
-            <Home user ={user} setUser={setUser} posts={posts} setSelectedPost={setSelectedPost}/>
+            <Home user ={user} setUser={setUser} posts={posts} />
           </Route>
+
+        
+
           
 
 

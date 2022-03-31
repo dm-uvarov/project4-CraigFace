@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 
     def index 
-        render json: Post.all, status: :ok
+        render json: Post.all.order(:id), status: :ok
     end
 
     def show
@@ -29,15 +29,18 @@ class PostsController < ApplicationController
 
     
     def destroy
-        post =  Post.find(params[:id])
+        post =  Post.find(params[:id])  
         post.destroy
         head :no_content
     end
 
     def update
-        post =  @current_user.posts.find(params[:id])
-        post.update!(post_params)
-        render json: post
+
+
+        post =  Post.find(params[:id])
+        # byebug
+        post.update(post_params)
+        render json: post,status: :ok
     end
 
 
@@ -46,7 +49,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.permit(:name, :description, :category, :image_url, :user_id, :price)
+        params.permit(:name, :description, :category, :image_url, :user_id, :price,:likes)
     end
 
 

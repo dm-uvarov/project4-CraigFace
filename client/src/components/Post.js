@@ -1,14 +1,17 @@
 import React from 'react'
 
-function Post({post, setSelectedPost}) {
+function Post({post}) {
 
     const imgStyle = {
         height: '250px',
         width: "100%"
     }
 
+    // let pickedPost = post
+    // fetch(`/posts/${post.id}`).then(r=>r.json()).then(d => pickedPost=d )
+
   return (
-    <div  onClick={()=>setSelectedPost(post)} className="card  mb-2">
+    <div className="card  mb-2">
         {/* <span className="border border-primary"> */}
             <img
             style={imgStyle}

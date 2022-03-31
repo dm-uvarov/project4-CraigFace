@@ -12,6 +12,12 @@ class UsersController < ApplicationController
         render json: user , status: :ok
     end
 
+    def add_total
+        user = User.find_by(id: params[:id])
+        user.update(total_revenue: params[:total_revenue])
+        render json: user, status: :ok
+    end
+
     private
     def user_params
         params.permit(:username.downcase, :password, :password_confirmation)

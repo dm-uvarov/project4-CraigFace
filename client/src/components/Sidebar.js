@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Sidebar({user}) {
     
@@ -6,7 +7,9 @@ function Sidebar({user}) {
       <div className='sidebar'>
         
         <h5>Welcome {user.username}</h5>
-        <img src={user.profile_pic} id='profile-pic'></img>
+        <Link to='/user-profile'>
+          <img src={user.profile_pic} id='profile-pic'></img>
+        </Link>
         <h5>Your Total Posts: {user.posts.length}</h5>
         
 

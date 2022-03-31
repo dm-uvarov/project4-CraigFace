@@ -11,7 +11,7 @@ function PostContainer({posts, setSelectedPost}) {
 
 
     // // array of N elements, where N is the number of rows neede
-    console.log(posts)
+    // console.log(posts)
     const rows = [...Array( Math.ceil(posts.length / 4) )];
     // // chunk the products into the array of rows
     const productRows = rows.map( (row, idx) => posts.slice(idx * 4, idx * 4 + 4) ) 
@@ -29,7 +29,7 @@ function PostContainer({posts, setSelectedPost}) {
                     return(
                     <div  key={post.id} className='col-md-3'>
                         <Link to={`/posts/${post.id}`}>
-                            <Post  post={post} key={post.id} setSelectedPost={setSelectedPost}/>
+                            <Post  post={post} key={post.id}/>
                         </Link>
                     </div>
                 )})}
