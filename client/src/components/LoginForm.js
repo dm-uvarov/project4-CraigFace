@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 
 
-function LoginForm({setUser}){
+function LoginForm({setUser,setIsLoggedIn}){
 
 
     const [username,setUsername] = useState("")
@@ -25,6 +25,7 @@ function LoginForm({setUser}){
         .then(r=>{
             if(r.ok){
                 r.json().then(setUser)
+                setIsLoggedIn(true)
             }else{
                 r.json().then(alert("Invalid Username or Password"))
             }

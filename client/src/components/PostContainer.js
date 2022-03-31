@@ -7,15 +7,20 @@ import {
 } from "react-router-dom";
 
 const url = 'http://localhost:4000/'
-function PostContainer({posts, setSelectedPost}) {
+function PostContainer({posts, setSelectedPost, setIsLoggedIn}) {
 
 
     // // array of N elements, where N is the number of rows neede
-    // console.log(posts)
-    const rows = [...Array( Math.ceil(posts.length / 4) )];
+    console.log(posts)
+    // if(posts.errors){
+        
+    // }
+    const rows = [...Array( Math.ceil(posts.length / 4) )]; 
     // // chunk the products into the array of rows
     const productRows = rows.map( (row, idx) => posts.slice(idx * 4, idx * 4 + 4) ) 
     // debugger 
+
+
 
     
 

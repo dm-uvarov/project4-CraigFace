@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function Sidebar({user}) {
-    
+    console.log(user)
   return (
       <div className='sidebar'>
         

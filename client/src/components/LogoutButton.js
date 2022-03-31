@@ -3,7 +3,7 @@ import React from 'react'
 function LogoutButton({setUser}) {
 
     const handleLogout = () =>{
-        fetch('/logout',{method:"DELETE"})
+        fetch('/logout',{method:"DELETE"}).then().then(console.log)
         setUser(null)
     }
 

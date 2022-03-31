@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 
-function SignupForm(){
+function SignupForm({setUser}){
 
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
@@ -21,9 +21,9 @@ function SignupForm(){
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(newUser)
-        }).then(r=>r.json()).then(alert(`Welcome to CraigFace, ${newUser.username}`))
-
-
+        })
+        .then(r=>r.json())
+        .then(alert(`Welcome to CraigFace, ${newUser.username}`))
     }
 
 

@@ -17,22 +17,35 @@ function App() {
 
   const [posts, setPosts] = useState([])
   const [user,setUser] = useState(null)
+  const [isLoggedIn,setIsLoggedIn] = useState(false)
   const [likes,setLikes] = useState(0)
 
 
   useEffect(() => {
     fetch("/posts")
-      .then(r=>r.json())
-      .then(data => setPosts(data))
-  }, [likes])
+      .then(r=>{
+        if(r.ok){
+          r.json().then(data => setPosts(data))
+        }else{
+          r.json().then(console.log)
+        }
+      })
+  }, [likes,isLoggedIn])
 
-  useEffect(() => {
+  useEffect(
+    () => 
+  {
     fetch("/me").then(r => {
       if (r.ok){
-        r.json().then(setUser)
+        r.json()
+        .then((user) => { 
+          setIsLoggedIn(true)
+          setUser(user)
+        })
       }
     })
-  }, [])
+  }
+  , [])
 
 
 
@@ -65,11 +78,11 @@ function App() {
   }
 
   
- if (!(user)) {
+ if ((!(user))) {
    return(
     <Switch>
       <Route path="/">
-       <StartPage setUser={setUser}/>
+       <StartPage setUser={setUser} setIsLoggedIn={setIsLoggedIn}/>
       </Route>
     </Switch>
    )
@@ -95,7 +108,7 @@ function App() {
           </Route>
           
           <Route path="/">
-            <Home user ={user} setUser={setUser} posts={posts} />
+            <Home user ={user} setUser={setUser} posts={posts} setIsLoggedIn={setIsLoggedIn}/>
           </Route>
 
         

@@ -3,7 +3,7 @@ import Header from './Header'
 import PostContainer from './PostContainer'
 import Sidebar from './Sidebar'
 
-function Home({setUser, posts, user}) {
+function Home({setUser, posts, user,setIsLoggedIn}) {
   const [filtered, setFiltered] = useState(false)
 
 
@@ -16,7 +16,7 @@ function Home({setUser, posts, user}) {
   <div>
         <div>
           <label>
-          <Header setUser={setUser}/>
+          <Header setUser={setUser} />
           </label>
           <div className="checkbox-area"> 
             <label > 
@@ -24,7 +24,7 @@ function Home({setUser, posts, user}) {
               <input type="checkbox" onChange={toggleMyPosts}  />
             </label>
           </div>
-          <PostContainer posts={filteredPosts}/>
+          <PostContainer posts={filteredPosts} setIsLoggedIn={setIsLoggedIn}/>
           <Sidebar user={user}/>
         </div>
         
