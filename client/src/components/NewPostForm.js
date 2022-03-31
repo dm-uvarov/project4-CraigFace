@@ -45,44 +45,38 @@ function NewPostForm({addPost,setUser}) {
         </label>
         
       <div> 
-        <h2>New post here?:</h2>    
+        <h2>New post here:</h2>    
       </div>
-    <form onSubmit={handleSubmit}>
-        <div> 
-            <label> 
-                <div>Name </div>
-                <input onChange={e => setName(e.target.value)} type="text" placeholder="Name"/>
-            </label>
-        </div>
-        <label> 
-                <div>Description </div>
-                <input onChange={e => setDescription(e.target.value)} type="text" placeholder="Description"/>
-            </label>
-        <div> 
-            <label> 
-                <div>category </div>
-                <input onChange={e => setCategory(e.target.value)} type="text"   placeholder="category"/>
-            </label>
-        </div>
-        <div> 
-            <label> 
-                <div>place Image url here: </div>
-                <input onChange={e => setUserImageUrl(e.target.value)} type="text"  placeholder="image url"  />
-            </label>
-        </div>
-        <div> 
-            <label> 
-                <div>price: </div>
-                <input onChange={e => setPrice(e.target.value)} type="number"  placeholder="price"  />
-            </label>
-        </div>
-        <div>
-            
-            <button type="submit">Add Post</button>
-        </div>
-    </form>
+
+      <div className="create-form">
+        <form onSubmit={handleSubmit}>
+            <div className="form-outline mb-4">
+                <input onChange={(e) => setName(e.target.value)} type="text" id="signup-username-input" className="form-control" placeholder="Name" />
+                <label className="form-label" htmlFor="signup-username-input">Name</label>
+            </div>
+            <div className="form-outline mb-4"> 
+                <input onChange={(e) => setDescription(e.target.value)} type="text" id="signup-username-input" className="form-control" placeholder="Description" />
+                <label className="form-label" htmlFor="signup-username-input">Description</label>
+            </div>
+            <div className="form-outline mb-4"> 
+                <input onChange={(e) => setCategory(e.target.value)} type="text" id="signup-username-input" className="form-control" placeholder="Category" />
+                <label className="form-label" htmlFor="signup-username-input">Category</label>
+            </div>
+            <div className="form-outline mb-4"> 
+                <input onChange={(e) => setUserImageUrl(e.target.value)} type="text" id="signup-username-input" className="form-control" placeholder="Image" />
+                <label className="form-label" htmlFor="signup-username-input">Image_url</label>
+            </div>
+            <div className="form-outline mb-4"> 
+                <input onChange={(e) => setPrice(e.target.value)} type="text" id="signup-username-input" className="form-control" placeholder="Price" />
+                <label className="form-label" htmlFor="signup-username-input">Price</label>
+            </div>
+            <div>
+            <button type="submit" className="btn btn-primary btn-block mb-4">Add Post</button>
+            </div>
+        </form>
     
- </div>
+        </div>
+    </div>
 
 
 
