@@ -3,6 +3,8 @@ import {NavLink} from 'react-router-dom'
 import LogoutButton from './LogoutButton'
 
 
+
+
 function Header({setUser}) {
 
   return (
@@ -22,6 +24,8 @@ function Header({setUser}) {
           <NavLink to='/'className="nav-link"> <LogoutButton setUser={setUser}/> <span className="sr-only"></span></NavLink>
         </li>
         </ul>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="https://i.ibb.co/PNtpmc8/craigsface-1.jpg" alt="craigsface-1" border="0" id="image" />
       </div>
     </nav>
   )

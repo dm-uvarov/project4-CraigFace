@@ -92,3 +92,18 @@
       text-align: center;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     }
+
+    .post-page {
+      padding-inline-start: 200px;
+
+    }
+
+    #image {
+      width: 300px;
+      align-content: space-between;
+      
+    }
+
+    #header {
+      padding-inline-start: 300px;
+    }
