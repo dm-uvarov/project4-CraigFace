@@ -12,6 +12,10 @@ function Sidebar({user}) {
         </Link>
         <h5>Your Total Posts: {user.posts.length}</h5>
         
+        <div className='chat-place'> 
+        <h5> chat here</h5>
+        
+        </div>
 
       </div>
    

@@ -21,7 +21,10 @@ Rails.application.routes.draw do
   # Adds to user total revenue
   patch '/add_total_revenue/:id', to:"users#add_total_revenue"
 
+  resources :chats, only: [:index, :create]
+  resources :messages, only: :create
 
+  mount ActionCable.server => '/cable'
 
 
 end
