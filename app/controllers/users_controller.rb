@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         user = User.find_by(id: params[:id])
         user.total_revenue = user.total_revenue + params[:total_revenue]
         user.save
-        byebug
+        # byebug
         render json: user, status: :ok
     end
 

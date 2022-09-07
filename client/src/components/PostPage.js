@@ -58,7 +58,7 @@ function PostPage ({user,posts,handleDelete,setLikes,likes}) {
                     {post &&
                         <Link to='/'>
                         {user.id != post.user_id ?
-                            <button onClick={handleBuy}>BUY ME</button>: 
+                            <button className="Button Success" onClick={handleBuy}>BUY ME</button>: 
                             <button>YOU OWN THIS</button>
                         }
                         </Link> 

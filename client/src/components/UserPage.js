@@ -4,7 +4,8 @@ import Header from './Header'
 function UserPage({user,setUser}) {
     console.log(user)
     return (
-    <div className="container rounded bg-white mt-5 mb-5">
+    // <div className="container rounded bg-white ">
+    <div className="bg-white">
         <label>
             <Header setUser={setUser}/>
         </label>
@@ -24,7 +25,8 @@ function UserPage({user,setUser}) {
             </div>
         </div>
     </div>
-</div>
+    </div>
+// </div>
     )
 }
 export default UserPage
