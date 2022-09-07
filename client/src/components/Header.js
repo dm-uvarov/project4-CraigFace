@@ -15,8 +15,8 @@ function Header({setUser}) {
       <Logo className="navbar-brand mx-1"/>
 
       <div className="d-flex flex-reverse ">
-          <NavLink exact to='/'className="d-flex btn btn-outline-primary btn-sm text-bold fw-bold me-2" >Home</NavLink>
-          <NavLink exact to='/new-post-form'className="btn btn-outline-primary btn-sm fw-bold me-2" >Create Post</NavLink>
+          <NavLink exact to='/'className="d-flex btn btn-outline-primary btn-lg text-bold fw-bold me-2" >Home</NavLink>
+          <NavLink exact to='/new-post-form'className="btn btn-outline-primary btn-lg fw-bold me-2" >Create Post</NavLink>
           <LogoutButton setUser={setUser}/>
 
         {/* <img src="https://i.ibb.co/PNtpmc8/craigsface-1.jpg" alt="craigsface-1" border="0" id="image" /> */}
