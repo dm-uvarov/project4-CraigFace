@@ -10,10 +10,9 @@ function Header({setUser}) {
 
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-light bg-light" id="header">
-      <div className="container-fluid"></div>
-      <Logo className="navbar-brand mb-0"/>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light " id="header">
+      <Logo className="navbar-brand mx-1"/>
+      <div className="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
       <ul className="navbar-nav m-auto ">
         <li className="btn btn-primary btn-small mb-4">
           <NavLink exact to='/'className="nav-link">Home <span className="sr-only"></span></NavLink>

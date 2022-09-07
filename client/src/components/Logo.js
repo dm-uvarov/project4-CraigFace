@@ -4,7 +4,7 @@ import logo2 from './globe1.png';
 
 export default function Logo () {
   return (
-    <div className="" 
+    <div id="logo" 
     style={{ backgroundImage: `url(${logo1})`, 
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat' }}>
