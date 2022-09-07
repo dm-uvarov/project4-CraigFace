@@ -10,7 +10,7 @@ function LogoutButton({setUser}) {
 
 
   return (
-        <div onClick={handleLogout}>Logout</div>
+        <div className="btn btn-outline-primary btn-sm fw-bold" onClick={handleLogout}>Logout 	&rarr;</div>
   )
 }
 

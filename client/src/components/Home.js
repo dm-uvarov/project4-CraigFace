@@ -15,9 +15,9 @@ function Home({setUser, posts, user,setIsLoggedIn}) {
   return (
   <div>
         <div>
-          <label>
+
           <Header setUser={setUser} />
-          </label>
+
           <div className="checkbox-area"> 
             <label > 
               Show only my posts <span/>

@@ -39,11 +39,7 @@ function NewPostForm({addPost,setUser}) {
 
   return (
     <div> 
-        
-        <label>
             <Header setUser={setUser}/>
-        </label>
-        
       <div> 
         <h2>New post here:</h2>    
       </div>

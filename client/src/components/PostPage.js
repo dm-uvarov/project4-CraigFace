@@ -4,7 +4,9 @@ import {
     useParams
   } from "react-router-dom";
 import Sidebar from './Sidebar';
-function PostPage ({user,posts,handleDelete,setLikes,likes}) {
+import Header from './Header';
+
+function PostPage ({user,posts,handleDelete,setLikes,likes,setUser}) {
 
     const {id} = useParams()
 
@@ -45,10 +47,8 @@ function PostPage ({user,posts,handleDelete,setLikes,likes}) {
 
 
     return (
-        <div className="post-page"> 
-         <Link to={"/"} > 
-            <label> {`<- back to home`}</label>
-        </Link>
+        <div className="post-page container-fluid"> 
+        <Header setUser={setUser}/>
             <div>
                 <h1> {post && post.name} </h1>
                     <img
