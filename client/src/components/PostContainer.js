@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 const url = 'http://localhost:4000/'
-function PostContainer({posts, setSelectedPost, setIsLoggedIn}) {
+function PostContainer({posts, setSelectedPost, setIsLoggedIn,navigate}) {
 
 
     // // array of N elements, where N is the number of rows neede

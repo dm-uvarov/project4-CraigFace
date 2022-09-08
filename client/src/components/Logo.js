@@ -9,8 +9,8 @@ export default function Logo () {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat' }}>
       {/* <img className="d-inline-block" src={logo} alt ="logo"></img> */}
-      <h1 className="h1 text-black d-inline-block align-middle">(craigs
-        <span className="h1 text-primary">face</span>)
+      <h1 className="h1 text-black d-inline-block align-middle fw-bold">(craigs
+        <span className="h1 text-primary fw-bold">face</span>)
       </h1>
     </div>
   )

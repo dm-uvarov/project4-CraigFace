@@ -3,12 +3,14 @@ import { useState } from 'react'
 import Header from './Header'
 import { Route } from 'react-router-dom'
 
+
 // t.string "category"
 //     t.string "image_url"
 //     t.bigint "user_id", null: false
 //     t.integer "price"
 
 function NewPostForm({ addPost, setUser }) {
+
 
 
     const [name, setName] = useState('')
@@ -32,7 +34,9 @@ function NewPostForm({ addPost, setUser }) {
             body: JSON.stringify(newPost)
         }).then(r => r.json()).then(d => addPost(d))
         e.target.reset()
-        // return(<Route path='/'></Route>)
+        
+        
+        
     }
 
 
@@ -43,7 +47,7 @@ function NewPostForm({ addPost, setUser }) {
             <div className="create-form">
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <h2 className='h2'>New post here:</h2>
+                        <h3 className='h3'>Enter new post here:</h3>
                     </div>
                     <div className="form-outline mb-4">
                         <input onChange={(e) => setName(e.target.value)} type="text" id="signup-username-input" className="form-control" placeholder="Name" />
@@ -66,7 +70,8 @@ function NewPostForm({ addPost, setUser }) {
                         {/* <label className="form-label" htmlFor="signup-username-input">Price</label> */}
                     </div>
                     <div>
-                        <button type="submit" className="btn btn-outline-primary btn-block mb-4">Add Post</button>
+                        <button type="submit" className="btn btn-outline-primary btn-block mb-4">Add Post
+                        </button>
                     </div>
                 </form>
 

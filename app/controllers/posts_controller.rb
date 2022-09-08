@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
 
 
-    def index 
-        render json: Post.all.order(:id), status: :ok
+    def index
+        
+        posts =  Post.all.order(:id)
+        render json: posts, status: :ok
     end
 
     def show
