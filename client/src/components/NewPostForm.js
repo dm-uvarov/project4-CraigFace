@@ -1,7 +1,8 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import { Route } from 'react-router-dom'
+import InfoModal from './InfoModal';
+import Alert from 'react-bootstrap/Alert'
 
 
 // t.string "category"
@@ -11,7 +12,7 @@ import { Route } from 'react-router-dom'
 
 function NewPostForm({ addPost, setUser }) {
 
-
+    const [show, setShow] = useState(false);
 
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
@@ -19,8 +20,13 @@ function NewPostForm({ addPost, setUser }) {
     const [userImageUrl, setUserImageUrl] = useState('')
     const [price, setPrice] = useState(0)
 
+    const hideAlert = (e) => {setShow(false)}
+    const showAlert = (e) => {setShow(true)}
+
     const handleSubmit = (e) => {
         e.preventDefault()
+        showAlert(e)
+
         const newPost = {
             name: name,
             description: description,
@@ -32,11 +38,17 @@ function NewPostForm({ addPost, setUser }) {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newPost)
-        }).then(r => r.json()).then(d => addPost(d))
+        }).then(r => r.json())
+            .then(d => {
+                addPost(d)
+            })
+
         e.target.reset()
-        
-        
-        
+
+
+
+
+
     }
 
 
@@ -44,6 +56,25 @@ function NewPostForm({ addPost, setUser }) {
     return (
         <div>
             <Header setUser={setUser} />
+
+            { show ? <div class="alert alert-info alert-dismissible fade show" role="alert">
+                 <b>New post was added on Home page.</b>
+                 <button 
+                    onClick={(e=>hideAlert(e))}
+                    type="button" 
+                    class="btn-close" 
+                    data-bs-dismiss="alert" 
+                    aria-label="Close">
+                    
+                </button>
+            </div> : <></>}
+                {/* <Alert variant="info" >
+                    <Alert.Heading>Info</Alert.Heading>
+                    <p>
+                        Post was added on home page.
+                    </p>
+                </ Alert> */}
+
             <div className="create-form">
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -77,11 +108,6 @@ function NewPostForm({ addPost, setUser }) {
 
             </div>
         </div>
-
-
-
-
-
     )
 }
 

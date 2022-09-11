@@ -51,62 +51,49 @@ function PostPage({ user, posts, handleDelete, setLikes, likes, setUser }) {
         <div className="post-page container-fluid">
             <Header setUser={setUser} />
 
-            <div className="card container-fluid" style={{ width: `24rem` }}>
-                <img src={post && post.image_url}
-                    alt="img"
-                    className="card-img-top"
-                    style={{ width: '100%' }}
-                />
-                <div className="card-body">
-                    <h4 className="card-title">{post && post.name} </h4>
-                    <p className="card-text">{post && post.description}</p>
+            <div className="container" >
+                <div className="card">
+                    <div className="row g-0">
+                        <div clasName="col-sm-4 position-relative">
+                            <img src={post && post.image_url}
+                                alt="img"
+                                className="card-img fit-over w100 h-100"
+                            />
+                        </div>
+                        <div className="col-sm-8">
+                            <div className="card-body">
+                                <h3 className="card-title h3">{post && post.name} </h3>
+                                <p className="card-text">{post && post.description}</p>
+                            </div>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">
+                                    Price: <span>${post && post.price}</span>
+                                </li>
+                                <li className="list-group-item">
+                                    Post by: <span>{post && post.user.username}</span>
+                                </li>
+                                <li className="list-group-item">
+                                    {post &&
+                                        <Link to='/'>
+                                            {user.id !== post.user_id ?
+                                                <button className="button btn btn-outline-primary btn-sm mx-1" onClick={handleBuy}>BUY ME</button> :
+                                                <button className="button btn btn-outline-primary btn-sm mx-1">YOU OWN THIS</button>
+                                            }
+                                        </Link>
+                                    }
+                                    <button className="button btn btn-primary btn-sm mx-1" onClick={() => handleLike()}>
+                                        <span className="badge text-bg-secondary">{likes} ♡</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-                <ul className="list-group list-group-flush">
-                    <li className="list-group-item">
-                        Price: <span>${post && post.price}</span>
-                    </li>
-                    <li className="list-group-item">
-                        Post by: <span>{post && post.user.username}</span>
-                    </li>
-                    <li className="list-group-item">
-                        {post &&
-                            <Link to='/'>
-                                {user.id !== post.user_id ?
-                                    <button className="button btn btn-outline-primary btn-sm mx-1" onClick={handleBuy}>BUY ME</button> :
-                                    <button className="button btn btn-outline-primary btn-sm mx-1">YOU OWN THIS</button>
-                                }
-                            </Link>
-                        }
-                        <button className="button btn btn-primary btn-sm mx-1" onClick={() => handleLike()}>
-                            <span class="badge text-bg-secondary">{likes} ♡</span>
-                        </button>
-                    </li>
-                </ul>
             </div>
 
-
-
-            <div >
-                <img
-                    src={post && post.image_url} alt={post && post.name}
-                />
-                <h1> {post && post.name} </h1>
-
-                <p>{post && post.description}</p>
-                {post &&
-                    <Link to='/'>
-                        {user.id !== post.user_id ?
-                            <button className="button btn btn-outline-primary" onClick={handleBuy}>BUY ME</button> :
-                            <button>YOU OWN THIS</button>
-                        }
-                    </Link>
-                }
-                <button onClick={() => handleLike()}>{likes}💟 </button>
-
-            </div>
             <Sidebar user={user} />
-
-        </div>
+        </div >
     )
 }
 

@@ -16,7 +16,7 @@ function Home({ setUser, posts, user, setIsLoggedIn }) {
     <div>
       
 
-        <Header setUser={setUser} />
+        <Header setUser={setUser} user={user} />
         <div className="d-flex justify-content-end mx-2">
 
         <div className="btn-group my-2 d-inline-flex " role="group" aria-label="Basic checkbox toggle button group">
