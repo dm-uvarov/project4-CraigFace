@@ -1,19 +1,11 @@
 import React, { useState } from 'react'
 import Header from './Header'
-import { Route } from 'react-router-dom'
-import InfoModal from './InfoModal';
-import Alert from 'react-bootstrap/Alert'
-
-
-// t.string "category"
-//     t.string "image_url"
-//     t.bigint "user_id", null: false
-//     t.integer "price"
 
 function NewPostForm({ addPost, setUser }) {
 
     const [show, setShow] = useState(false);
-
+    const [badgeCount,setBadgeCount] = useState(0);
+    
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
@@ -23,9 +15,11 @@ function NewPostForm({ addPost, setUser }) {
     const hideAlert = (e) => {setShow(false)}
     const showAlert = (e) => {setShow(true)}
 
+    const badgeCountIncrement = (e) => {
+        setBadgeCount(badgeCount + 1)} 
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        showAlert(e)
 
         const newPost = {
             name: name,
@@ -41,14 +35,11 @@ function NewPostForm({ addPost, setUser }) {
         }).then(r => r.json())
             .then(d => {
                 addPost(d)
+                showAlert(e)
+                badgeCountIncrement(e)
             })
 
         e.target.reset()
-
-
-
-
-
     }
 
 
@@ -57,8 +48,12 @@ function NewPostForm({ addPost, setUser }) {
         <div>
             <Header setUser={setUser} />
 
-            { show ? <div class="alert alert-info alert-dismissible fade show" role="alert">
-                 <b>New post was added on Home page.</b>
+            { show ? <div class="alert alert-info alert-dismissible fade show d-flex my-3" role="alert">
+                 <b>New post
+                    { badgeCount > 1 ? 
+                    <>
+                    s<span class="badge text-secondary px-0">({badgeCount})</span>
+                    </> : <> </> } added on Home page.</b>
                  <button 
                     onClick={(e=>hideAlert(e))}
                     type="button" 
