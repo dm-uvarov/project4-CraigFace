@@ -44,21 +44,17 @@ div .alert{
   padding-right: 0em;
 }
 
-#member {
+/* #member {
   position: relative;
   max-width: 360px;
   margin: 0 auto 0;
   padding: 45px;
   text-align: center;
-}
+} */
 
   .sidebar {
     height: 100%;
-    width: 250px;
-
-    left: 0;
-    top: 0;
-    padding-top: 40px;
+    padding-top: 1rem;
     background-color: lightblue;
     }
 
@@ -78,10 +74,6 @@ div .alert{
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     }
 
-    .post-page {
-      padding-inline-start: 200px;
-
-    }
 
     #image {
       width: 300px;

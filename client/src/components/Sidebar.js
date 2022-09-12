@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 function Sidebar({user}) {
     console.log(user)
   return (
-      <div className='sidebar'>
+      <div className='sidebar rounded'>
         
         <h5>Welcome, {user.username}</h5>
         <Link to='/user-profile'>

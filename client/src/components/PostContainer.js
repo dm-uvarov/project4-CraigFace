@@ -26,7 +26,7 @@ function PostContainer({posts, setSelectedPost, setIsLoggedIn,navigate}) {
 
 
   return (
-    <div className='container' style={{paddingLeft:"200px"}}>
+    <div className='container' >
         {productRows.map((row,indx) => {return(
             <div className='row' key={indx}>
                 {row.map(post => { 

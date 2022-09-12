@@ -3,12 +3,9 @@ import React from 'react'
 function Post({post}) {
 
     const imgStyle = {
-        height: '250px',
+        height: '100%',
         width: "100%"
     }
-
-    // let pickedPost = post
-    // fetch(`/posts/${post.id}`).then(r=>r.json()).then(d => pickedPost=d )
 
   return (
     <div className="card  mb-2">
