@@ -12,7 +12,7 @@ function Post({post}) {
         {/* <span className="border border-primary"> */}
             <img
             style={imgStyle}
-            className='card-img-top border border-dark'
+            className='card-img-top'
             src={post.image_url}
             alt='img'
             />

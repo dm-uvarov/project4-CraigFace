@@ -27,7 +27,7 @@ function PostPage({ user, posts, handleDelete, setLikes, likes, setUser }) {
                 "likes": likes + 1
             })
         }).then(r => r.json()).then(console.log)
-        setLikes(() => likes + 1)
+        setLikes((likes) => likes + 1)
 
     }
 
@@ -51,49 +51,52 @@ function PostPage({ user, posts, handleDelete, setLikes, likes, setUser }) {
         <div className="">
             <Header setUser={setUser} />
             {/* grid starts here */}
-            <div className="mx-1">
-                <div className="row gx-1">
-                    <div className="col-md-3"> 
-                    {/* place for userface */}
+            <div className="mx-3 my-3">
+                <div className="row gx-3 mr-3">
+                    <div className="col-md-3">
+                        {/* place for userface */}
                         <Sidebar user={user} />
                     </div>
                     <div className="col-md-9">
                         {/* place for big card */}
-                        <div className="card">
-                            <div className="row gx-0">
-                                <div clasName="col-8 col-md-6 position-relative">
+                        <div className="card" >
+                            <div className="row gx-0 ">
+                                <div clasName="col-sm-8 col-md-6 position-relative"
+                                style={{maxWidth : "45%"}}>
                                     <img src={post && post.image_url}
                                         alt="img"
-                                        className="card-img fit-cover w100 h-100"
-                                        style={{maxWidth : "12rem"}}
+                                        className="rounded-start w-100 h-100"
+                                        style={{objectFit: "cover",
+                                                maxHeight: "20rem"}}
                                     />
                                 </div>
-                                <div className="col-8 col-md-6">
+                                <div className="col-sm-8 col-md-6">
                                     <div className="card-body">
                                         <h3 className="card-title h3">{post && post.name} </h3>
                                         <p className="card-text">{post && post.description}</p>
+
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">
+                                                Price: <span>${post && post.price}</span>
+                                            </li>
+                                            <li className="list-group-item">
+                                                Post by: <span>{post && post.user.username}</span>
+                                            </li>
+                                            <li className="list-group-item">
+                                                {post &&
+                                                    <Link to='/'>
+                                                        {user.id !== post.user_id ?
+                                                            <button className="button btn btn-outline-primary btn-sm mx-1" onClick={handleBuy}>BUY ME</button> :
+                                                            <button className="button btn btn-outline-primary btn-sm mx-1">YOU OWN THIS</button>
+                                                        }
+                                                    </Link>
+                                                }
+                                                <button className="button btn btn-primary btn-sm mx-1" onClick={(e) => handleLike(e)}>
+                                                    <span className="badge text-bg-secondary">{likes} ♡</span>
+                                                </button>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <ul className="list-group list-group-flush">
-                                        <li className="list-group-item">
-                                            Price: <span>${post && post.price}</span>
-                                        </li>
-                                        <li className="list-group-item">
-                                            Post by: <span>{post && post.user.username}</span>
-                                        </li>
-                                        <li className="list-group-item">
-                                            {post &&
-                                                <Link to='/'>
-                                                    {user.id !== post.user_id ?
-                                                        <button className="button btn btn-outline-primary btn-sm mx-1" onClick={handleBuy}>BUY ME</button> :
-                                                        <button className="button btn btn-outline-primary btn-sm mx-1">YOU OWN THIS</button>
-                                                    }
-                                                </Link>
-                                            }
-                                            <button className="button btn btn-primary btn-sm mx-1" onClick={() => handleLike()}>
-                                                <span className="badge text-bg-secondary">{likes} ♡</span>
-                                            </button>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
 

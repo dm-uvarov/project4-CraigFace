@@ -56,6 +56,7 @@ div .alert{
     height: 100%;
     padding-top: 1rem;
     background-color: lightblue;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     }
 
     #profile-pic {
@@ -74,6 +75,9 @@ div .alert{
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     }
 
+    .card {
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
 
     #image {
       width: 300px;

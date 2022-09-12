@@ -70,7 +70,7 @@ function NewPostForm({ addPost, setUser }) {
                     </p>
                 </ Alert> */}
 
-            <div className="create-form">
+            <div className="create-form my-3">
                 <form onSubmit={handleSubmit}>
                     <div>
                         <h3 className='h3'>Enter new post here:</h3>
