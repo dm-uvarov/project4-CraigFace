@@ -8,9 +8,9 @@ function Sidebar({user}) {
       style={{maxHeight: "20rem"}}>
         
         <h4 className='h4 fw-bold' >Welcome, {user.username}</h4>
-        <Link to='/user-profile'>
+        {/* <Link to='/user-profile'> */}
           <img src={user.profile_pic} id='profile-pic'></img>
-        </Link>
+        {/* </Link> */}
         <h5 className='h5 fw-bold'>Posts: {user.posts.length}</h5>
         <h5 className='h5 fw-bold'>Revenue: ${user.total_revenue}</h5>
         
