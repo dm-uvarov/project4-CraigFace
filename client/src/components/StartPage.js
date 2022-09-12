@@ -8,7 +8,7 @@ function StartPage ({setUser,setIsLoggedIn}){
     return(
         <div>
             <LoginForm setUser={setUser} setIsLoggedIn={setIsLoggedIn}/>
-            <h2 id='member'>Not a member?</h2>
+            <h4 className='h4' id='member'>Not a member?</h4>
             <SignupForm/>
             
         </div>

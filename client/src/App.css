@@ -22,7 +22,7 @@ div .alert{
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 2rem auto 2rem;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -44,13 +44,13 @@ div .alert{
   padding-right: 0em;
 }
 
-/* #member {
+#member {
   position: relative;
   max-width: 360px;
   margin: 0 auto 0;
-  padding: 45px;
+  padding: 1rem;
   text-align: center;
-} */
+}
 
   .sidebar {
     height: 100%;

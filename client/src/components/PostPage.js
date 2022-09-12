@@ -32,7 +32,7 @@ function PostPage({ user, posts, handleDelete, setLikes, likes, setUser }) {
     }
 
 
-    const handleBuy = () => {
+    const handleBuy = (e) => {
 
         fetch(`/add_total_revenue/${post.user_id}`, {
             method: 'PATCH',
@@ -86,7 +86,7 @@ function PostPage({ user, posts, handleDelete, setLikes, likes, setUser }) {
                                                 {post &&
                                                     <Link to='/'>
                                                         {user.id !== post.user_id ?
-                                                            <button className="button btn btn-outline-primary btn-sm mx-1" onClick={handleBuy}>BUY ME</button> :
+                                                            <button className="button btn btn-outline-primary btn-sm mx-1" onClick={(e)=>handleBuy(e)}>BUY ME</button> :
                                                             <button className="button btn btn-outline-primary btn-sm mx-1">YOU OWN THIS</button>
                                                         }
                                                     </Link>

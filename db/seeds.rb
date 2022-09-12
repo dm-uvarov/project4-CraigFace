@@ -13,10 +13,10 @@ a = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHV6Vw6NNr3rzlHBt307S
 
 
  
-matt = User.create(username: "MQ", password: "1234", profile_pic: m)
-dmitry = User.create(username: "DU", password: "abcd", profile_pic: d)
-kevin = User.create(username: "KG", password: "5678", profile_pic: k)
-adam = User.create(username: "AL", password: "efgh", profile_pic: a)
+matt = User.create(username: "MQ", password: "1234", profile_pic: m, total_revenue: 100 )
+dmitry = User.create(username: "DU", password: "abcd", profile_pic: d, total_revenue: 100 )
+kevin = User.create(username: "KG", password: "5678", profile_pic: k, total_revenue: 100 )
+adam = User.create(username: "AL", password: "efgh", profile_pic: a, total_revenue: 100 )
 
 computer = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzyiDhNMtk7EIf30Qz8Q_C7tLgvpw17MCJg&usqp=CAU"
 iphone = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYZgQkGhzzaGImYLNE-ZWbI7tkXePwnd0DqA&usqp=CAU"
